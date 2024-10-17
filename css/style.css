@@ -69,7 +69,7 @@ form {
 }
 .form-group input,
 .btn {
-    box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   padding: 12px;
   border: none;
