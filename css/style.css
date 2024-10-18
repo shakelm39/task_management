@@ -8,7 +8,7 @@ body{
 
 .wrapper {
     width: 980px;
-    height: 100vh;
+    height: auto;
     background: #ccc;
     margin: 0 auto;
 }
@@ -55,7 +55,7 @@ body{
     text-align: center;
     margin-top: 50px;
 }
-form {
+.myform {
     width: 50%;
     margin: 0 auto;
     background: #fff;
@@ -91,3 +91,60 @@ form {
   .form-group input[type=submit]:hover {
     background-color: #45a049;
   }
+  .table{
+    width:100%;
+    border-collapse: collapse;
+  }
+  .table th{
+    background: #333;
+    color:#fff;
+    padding:10px 0; 
+  }
+   .table tr, td, th{
+    border:1px solid #ddd;
+    padding:10px;
+    margin:5px 0;
+  }
+  .table input[type="text"], input[type='date']{
+    padding: 10px 15px;
+    width:100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border:0;
+    
+  }
+  ::placeholder {
+    font-size:16px;
+    text-align-last: left;
+    padding: 0 10px;
+  }
+  .task_btn{
+    width:150px;
+    padding: 10px 0;
+    border:0;
+    cursor: pointer;
+    background: #05a530;
+    color:#fff;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  a.editBtn {
+    
+    text-decoration: none;
+    cursor: pointer;
+    background: #0d832a;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+a.deleteBtn{
+    text-decoration: none;
+    cursor: pointer;
+    background: #eb2c02;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.table td{
+   text-align: center;
+}

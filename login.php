@@ -55,7 +55,7 @@
                 <br>
                 <span style="color:red;"><?php if(isset($msg)){echo $msg;}?></span>
             </h2>
-            <form action="" method="POST">
+            <form action="" method="POST" class="myform">
                 <div class="form-group">
                     <label for="username">User Name</label>
                     <input type="text" name="username" placeholder="Enter Username">

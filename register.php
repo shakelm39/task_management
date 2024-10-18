@@ -15,7 +15,7 @@
             }else{
             $users[$username] =['password'=>$password];
             file_put_contents('users.json', json_encode($users, JSON_PRETTY_PRINT));
-            echo "User registered successfully!";
+            $msg =  "User registration successfull!";
             }
         }
         
@@ -60,7 +60,7 @@
             
             ?>
             </h3>
-            <form action="" method="POST">
+            <form action="" method="POST" class="myform">
                 <div class="form-group">
                     <label for="username">User Name</label>
                     <input type="text" name="username" placeholder="Enter Username">
