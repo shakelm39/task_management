@@ -1,3 +1,30 @@
+<?php 
+
+
+    if(isset($_POST['submit'])){
+        $username = $_POST['username'];
+        $password =  password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $users = json_decode(file_get_contents('users.json'), true);
+        //empty data validation 
+        if($username=="" ||  $password==""){
+            $msg = "Username or Password is empty";
+            
+        }else{
+            if(isset($users[$username])){
+                echo "User already exist";
+            }else{
+            $users[$username] =['password'=>$password];
+            file_put_contents('users.json', json_encode($users, JSON_PRETTY_PRINT));
+            echo "User registered successfully!";
+            }
+        }
+        
+
+        
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +52,14 @@
         </div>
         <div class="content">
             <h2>Registration Form</h2>
+                <h3 style="color:red; text-align:center">
+                    <?php 
+                if(isset($msg)){
+                    echo $msg;
+                }
+            
+            ?>
+            </h3>
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="username">User Name</label>

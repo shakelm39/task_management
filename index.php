@@ -25,6 +25,12 @@
         </div>
         <div class="content">
             <h2>Welcome to Task Management system</h2>
+            <h2 style="color:red;">
+                <?php if(isset($_GET['msg'])){echo $_GET['msg'];echo "<br>" ;}
+                
+                ?>
+                
+            </h2>
         </div>
     </div>
 </body>

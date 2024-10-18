@@ -1,3 +1,30 @@
+
+<?php 
+    session_start();
+    if(isset($_POST['submit'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        //getting all json data as array in users veriable
+
+        $user = json_decode(file_get_contents("users.json"), true);
+
+        if(isset($user[$username]) && password_verify($password, $user[$username]['password']))
+        {
+          $_SESSION['username']= $username; 
+
+          header("Location: dashboard.php");
+
+        }else{
+            $msg =  "Username or Password wrong!";
+        }
+
+        echo "<pre>";
+       
+        echo "</pre>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +51,10 @@
             </div>
         </div>
         <div class="content">
-            <h2>Login Form</h2>
+            <h2>Login Form
+                <br>
+                <span style="color:red;"><?php if(isset($msg)){echo $msg;}?></span>
+            </h2>
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="username">User Name</label>
